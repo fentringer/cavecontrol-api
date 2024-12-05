@@ -22,8 +22,8 @@ public class CommentController {
     }
 
     @PutMapping
-    public ResponseEntity<CommentDTO> updateComment(@RequestParam String content) {
-        CommentDTO updatedComment = commentService.updateComment(content);
+    public ResponseEntity<CommentDTO> updateComment(@RequestBody CommentDTO commentDTO) {
+        CommentDTO updatedComment = commentService.updateComment(commentDTO.getContent());
         return ResponseEntity.ok(updatedComment);
     }
 }
